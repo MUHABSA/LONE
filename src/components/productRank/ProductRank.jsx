@@ -1,7 +1,7 @@
 import React from 'react';
-import RankItemInfo from '../rankItemInfo/rankItemInfo';
+import RankItemInfo from '../rankItemInfo/RankItemInfo';
 
-export default function ProductRanking() {
+export default function ProductRank() {
   return (
     <section>
       <h3>랭킹</h3>
