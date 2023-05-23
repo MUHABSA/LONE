@@ -1,7 +1,10 @@
 import React from 'react';
 import ProductCard from '../common/productCard/ProductCard';
 
-export default function PlaceInfoModal() {
+export default function PlaceInfoModal({
+  isMarkerClicked,
+  setIsMarkerClicked,
+}) {
   return (
     <section>
       <h3>양조장명</h3>
@@ -17,7 +20,13 @@ export default function PlaceInfoModal() {
           <ProductCard />
         </li>
       </ul>
-      <button>닫기 버튼</button>
+      <button
+        onClick={() => {
+          setIsMarkerClicked(!isMarkerClicked);
+        }}
+      >
+        닫기 버튼
+      </button>
     </section>
   );
 }
