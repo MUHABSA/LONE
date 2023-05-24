@@ -9,6 +9,7 @@ import MyPage from './pages/myPage/MyPage';
 import ProductList from './pages/productList/ProductList';
 import ProductDetail from './pages/productDetail/ProductDetail';
 import Splash from './pages/splash/Splash';
+import './styles/Global.css';
 
 function App() {
   const [productData, setProductData] = useState();

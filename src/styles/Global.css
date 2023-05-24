@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  max-width: 375px;
+  height: 100vh;
+  margin: 0px auto;
+  border: 1px solid rgb(226, 226, 226);
+  background-color: #f9f6fe;
+}
