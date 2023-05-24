@@ -1,4 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { db } from './Firebase';
+import { collection, getDocs, query } from 'firebase/firestore';
 import Home from './pages/home/Home';
 import MagazineDetail from './pages/magazineDetail/MagazineDetail';
 import ProductMap from './pages/productMap/ProductMap';
@@ -8,6 +11,25 @@ import ProductDetail from './pages/productDetail/ProductDetail';
 import Splash from './pages/splash/Splash';
 
 function App() {
+  const [productData, setProductData] = useState();
+
+  const productCollectionRef = collection(db, 'products');
+  const getData = async () => {
+    try {
+      const q = query(productCollectionRef);
+      const data = await getDocs(q);
+      const newData = data.docs.map((doc) => ({ ...doc.data() }));
+      setProductData(newData);
+    } catch (e) {
+      alert('에러 발생');
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="App">
       <Routes>
