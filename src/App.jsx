@@ -37,7 +37,7 @@ function App() {
         <Route path="/" element={<Splash />} />
         <Route path="/home" element={<Home />} />
         <Route path="/magazine/:id" element={<MagazineDetail />} />
-        <Route path="/map" element={<ProductMap />} />
+        <Route path="/map" element={<ProductMap productData={productData} />} />
         <Route path="/productList" element={<ProductList />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/myPage" element={<MyPage />} />
