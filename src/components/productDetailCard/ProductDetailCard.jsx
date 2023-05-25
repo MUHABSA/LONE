@@ -1,15 +1,16 @@
 import React from 'react';
 
-export default function ProductDetailCard() {
+export default function ProductDetailCard({ productDetail }) {
   return (
     <div>
       <img src="" alt="" />
-      <strong>제품명</strong>
+      <strong>{productDetail.product_name}</strong>
+      <p>{productDetail.seller}</p>
       <p>
-        도수 <span>21</span>/ml
+        도수 <span>{productDetail.abv}</span>/ml
       </p>
       <button>
-        마셔봤어요 아이콘<span>5</span>
+        마셔봤어요 아이콘<span>{productDetail.likeCount}</span>
       </button>
     </div>
   );
