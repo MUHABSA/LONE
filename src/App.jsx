@@ -38,7 +38,10 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/magazine/:id" element={<MagazineDetail />} />
         <Route path="/map" element={<ProductMap productData={productData} />} />
-        <Route path="/productList" element={<ProductList />} />
+        <Route
+          path="/productList"
+          element={<ProductList productData={productData} />}
+        />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/myPage" element={<MyPage />} />
       </Routes>
