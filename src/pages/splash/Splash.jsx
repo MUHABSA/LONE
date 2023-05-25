@@ -26,7 +26,7 @@ const SplashText = styled.p`
 const LoginBtn = styled.button`
   background-color: #fee500;
   width: 60%;
-  padding: 5px 0;
+  padding: 2px 0;
   border-radius: 25px;
   border: none;
 `;
