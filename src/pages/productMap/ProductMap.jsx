@@ -5,7 +5,7 @@ import NavBar from '../../components/common/navBar/NavBar';
 import KakaoMap from '../../components/kakaoMap/KakaoMap';
 import PlaceInfoModal from '../../components/placeInfoModal/PlaceInfoModal';
 
-export default function ProductMap() {
+export default function ProductMap({ productData }) {
   const [isMarkerClicked, setIsMarkerClicked] = useState(false);
 
   return (
@@ -13,6 +13,7 @@ export default function ProductMap() {
       <div>
         <Header />
         <KakaoMap
+          productData={productData}
           isMarkerClicked={isMarkerClicked}
           setIsMarkerClicked={setIsMarkerClicked}
         />

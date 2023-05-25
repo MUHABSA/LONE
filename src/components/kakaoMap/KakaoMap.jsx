@@ -2,8 +2,13 @@ import React, { useEffect } from 'react';
 import './KakaoMap.css';
 import markerClicked from '../../assets/markerClicked.png';
 import markerDefault from '../../assets/markerDefault.png';
+import markerVisited from '../../assets/markerVisited.png';
 
-export default function KakaoMap({ isMarkerClicked, setIsMarkerClicked }) {
+export default function KakaoMap({
+  productData,
+  isMarkerClicked,
+  setIsMarkerClicked,
+}) {
   const { kakao } = window;
 
   const MARKER_WIDTH = 30;
@@ -20,27 +25,46 @@ export default function KakaoMap({ isMarkerClicked, setIsMarkerClicked }) {
     };
     const map = new kakao.maps.Map(container, options);
 
-    //임시 데이터--
-    const positions = [
-      {
-        title: '제주고소리술익는집',
-        latlng: new kakao.maps.LatLng(33.38497236084034, 126.79376182886297),
-      },
-      {
-        title: '대강양조장',
-        latlng: new kakao.maps.LatLng(36.92216577406283, 128.35350965952983),
-      },
-      {
-        title: '문경주조',
-        latlng: new kakao.maps.LatLng(36.7722791733817, 128.31409354361026),
-      },
-      {
-        title: '청산녹수',
-        latlng: new kakao.maps.LatLng(35.37731106846008, 126.79282406031814),
-      },
-    ];
-    //--임시데이터
+    // 양조장명으로 오름차순 정렬
+    productData?.sort((a, b) =>
+      a.seller.toLowerCase() < b.seller.toLowerCase() ? -1 : 1,
+    );
 
+    // 양조장을 최상위 property로 데이터 가공
+    let reformedData = [];
+    productData?.map((item) => {
+      reformedData = [
+        ...reformedData,
+        {
+          seller: {
+            seller_name: item.seller,
+            products: [
+              {
+                title: item.product_name,
+                latlng: new kakao.maps.LatLng(item.lat, item.lng),
+                isLiked: item.liked,
+              },
+            ],
+          },
+        },
+      ];
+    });
+
+    // 양조장(위경도) value가 같은 객체를 병합
+    const groupValues = reformedData.reduce((acc, current) => {
+      acc[current.seller.seller_name] = acc[current.seller.seller_name] || [];
+      acc[current.seller.seller_name].push(...current.seller.products);
+      return acc;
+    }, {});
+    const positions = Object.entries(groupValues).map((item) => {
+      return {
+        seller: item[0],
+        latlng: item[1][0].latlng,
+        products: item[1],
+      };
+    });
+
+    // 지도 위에 마커 표시
     const markerSize = new kakao.maps.Size(MARKER_WIDTH, MARKER_HEIGHT);
     const defaultMarkerImage = new kakao.maps.MarkerImage(
       markerDefault,
@@ -50,26 +74,42 @@ export default function KakaoMap({ isMarkerClicked, setIsMarkerClicked }) {
       markerClicked,
       markerSize,
     );
+    const visitedMarkerImage = new kakao.maps.MarkerImage(
+      markerVisited,
+      markerSize,
+    );
     let selectedMarker = null;
 
     positions.forEach((item) => {
       const marker = new kakao.maps.Marker({
         map: map,
         position: item.latlng,
-        title: item.title,
-        image: defaultMarkerImage,
+        title: item.seller,
+        //하나라도 방문했다면 방문 마크로 변경됨
+        image: !item.products.some((product) => product.isLiked)
+          ? defaultMarkerImage
+          : visitedMarkerImage,
       });
+      if (item.products.some((product) => product.isLiked)) {
+        marker.liked = true;
+      } else {
+        marker.liked = false;
+      }
 
+      // 선택한 마커 이미지 변경
       kakao.maps.event.addListener(marker, 'click', function () {
         if (!selectedMarker || selectedMarker !== marker) {
-          !!selectedMarker && selectedMarker.setImage(defaultMarkerImage);
+          !!selectedMarker &&
+            selectedMarker.setImage(
+              !selectedMarker.liked ? defaultMarkerImage : visitedMarkerImage,
+            );
           marker.setImage(clickedMarkerImage);
         }
         selectedMarker = marker;
         setIsMarkerClicked(!isMarkerClicked);
       });
     });
-  }, []);
+  }, [productData]);
 
   return (
     <div id="map" className="map">
