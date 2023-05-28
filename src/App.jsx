@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { db } from './firebase';
+import { db } from './Firebase';
 import { collection, getDocs, query } from 'firebase/firestore';
 import { IsLoginProvider } from './context/IsLoginContext';
 import PrivateRoute from './routes/PrivateRoute';
