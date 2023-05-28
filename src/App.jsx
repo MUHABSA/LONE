@@ -1,7 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { db } from './Firebase';
+import { db } from './firebase';
 import { collection, getDocs, query } from 'firebase/firestore';
+import { IsLoginProvider } from './context/IsLoginContext';
+import PrivateRoute from './routes/PrivateRoute';
+import PublicRoute from './routes/PublicRoute';
+import LogIn from './pages/logIn/LogIn';
 import Home from './pages/home/Home';
 import MagazineDetail from './pages/magazineDetail/MagazineDetail';
 import ProductMap from './pages/productMap/ProductMap';
@@ -22,7 +26,7 @@ function App() {
       const newData = data.docs.map((doc) => ({ ...doc.data() }));
       setProductData(newData);
     } catch (e) {
-      alert('에러 발생');
+      alert('error');
       console.log(e);
     }
   };
@@ -33,18 +37,28 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Splash />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/magazine/:id" element={<MagazineDetail />} />
-        <Route path="/map" element={<ProductMap productData={productData} />} />
-        <Route
-          path="/productList"
-          element={<ProductList productData={productData} />}
-        />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/myPage" element={<MyPage />} />
-      </Routes>
+      <IsLoginProvider>
+        <Routes>
+          <Route element={<PublicRoute />}>
+            <Route path="/" element={<Splash />} />
+            <Route path="/login" element={<LogIn />} />
+          </Route>
+          <Route element={<PrivateRoute />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/magazine/:id" element={<MagazineDetail />} />
+            <Route
+              path="/map"
+              element={<ProductMap productData={productData} />}
+            />
+            <Route
+              path="/productList"
+              element={<ProductList productData={productData} />}
+            />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/myPage" element={<MyPage />} />
+          </Route>
+        </Routes>
+      </IsLoginProvider>
     </div>
   );
 }
