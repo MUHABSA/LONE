@@ -8,6 +8,7 @@ export default function KakaoMap({
   productData,
   isMarkerClicked,
   setIsMarkerClicked,
+  setSelectedSeller,
 }) {
   const { kakao } = window;
 
@@ -107,13 +108,10 @@ export default function KakaoMap({
         }
         selectedMarker = marker;
         setIsMarkerClicked(!isMarkerClicked);
+        setSelectedSeller(marker.getTitle());
       });
     });
   }, [productData]);
 
-  return (
-    <div id="map" className="map">
-      KakaoMap
-    </div>
-  );
+  return <div id="map" className="map"></div>;
 }

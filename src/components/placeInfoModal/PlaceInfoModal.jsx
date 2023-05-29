@@ -4,21 +4,21 @@ import ProductCard from '../common/productCard/ProductCard';
 export default function PlaceInfoModal({
   isMarkerClicked,
   setIsMarkerClicked,
+  productData,
+  selectedSeller,
 }) {
   return (
     <section>
-      <h3>양조장명</h3>
-      <address>상세주소</address>
+      <h3>{selectedSeller}</h3>
+      <address>상세주소?</address>
       <ul>
-        <li>
-          <ProductCard />
-        </li>
-        <li>
-          <ProductCard />
-        </li>
-        <li>
-          <ProductCard />
-        </li>
+        {productData
+          ?.filter((item) => item.seller === selectedSeller)
+          .map((item) => (
+            <li key={item.product_id}>
+              <ProductCard data={item} />
+            </li>
+          ))}
       </ul>
       <button
         onClick={() => {
