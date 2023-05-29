@@ -1,16 +1,16 @@
 import React from 'react';
 
-export default function RankItemInfo() {
+export default function RankItemInfo({ productData, rank }) {
   return (
     <div>
-      <p>순위</p>
-      <img src="" alt="" />
-      <strong>주류명</strong>
-      <p>양조장이름</p>
-      <button>
-        마셔봤어요 버튼
-        <span>마셔봤어요 개수</span>
-      </button>
+      <p>{rank + 1}</p>
+      <img src={productData.image} alt="" />
+      <strong>{productData.product_name}</strong>
+      <p>{productData.seller}</p>
+      <p>
+        <span>{productData.likeCount}</span>명이 연결됐어요
+      </p>
+      <button>마셔봤어요 버튼</button>
     </div>
   );
 }
