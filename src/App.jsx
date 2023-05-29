@@ -16,7 +16,7 @@ import Splash from './pages/splash/Splash';
 import './styles/Global.css';
 
 function App() {
-  const [productData, setProductData] = useState();
+  const [productData, setProductData] = useState([]);
 
   const productCollectionRef = collection(db, 'products');
   const getData = async () => {
