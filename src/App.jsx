@@ -46,10 +46,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path="/home" element={<Home />} />
             <Route path="/magazine/:id" element={<MagazineDetail />} />
-            <Route
-              path="/map"
-              element={<ProductMap productData={productData} />}
-            />
+            <Route path="/map" element={<ProductMap />} />
             <Route
               path="/productList"
               element={<ProductList productData={productData} />}
