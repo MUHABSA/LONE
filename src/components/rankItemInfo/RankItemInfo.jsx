@@ -1,16 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import LikeBtn from '../common/likeBtn/LikeBtn';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../Firebase';
 
-export default function RankItemInfo({ productData, rank }) {
+export default function RankItemInfo({ data, rank }) {
+  const [productId, setProductId] = useState(data.product_id);
+  const [isLiked, setIsLiked] = useState(data.liked);
+  const [likeCount, setLikeCount] = useState(data.likeCount);
+
+  useEffect(() => {
+    const getCurrentProductData = async () => {
+      try {
+        const q = query(
+          collection(db, 'products'),
+          where('product_id', '==', productId),
+        );
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          setProductId(doc.id);
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    getCurrentProductData();
+  }, []);
+
   return (
     <div>
       <p>{rank + 1}</p>
-      <img src={productData.image} alt="" />
-      <strong>{productData.product_name}</strong>
-      <p>{productData.seller}</p>
+      <img src={data.image} alt="" />
+      <strong>{data.product_name}</strong>
+      <p>{data.seller}</p>
       <p>
-        <span>{productData.likeCount}</span>명이 연결됐어요
+        <span>{likeCount}</span>명이 연결됐어요
       </p>
-      <button>마셔봤어요 버튼</button>
+      <LikeBtn
+        productId={productId}
+        isLiked={isLiked}
+        setIsLiked={setIsLiked}
+        likeCount={likeCount}
+        setLikeCount={setLikeCount}
+      />
     </div>
   );
 }
