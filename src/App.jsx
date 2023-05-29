@@ -5,14 +5,14 @@ import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { IsLoginProvider } from './context/IsLoginContext';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
-import LogIn from './pages/logIn/LogIn';
-import Home from './pages/home/Home';
-import MagazineDetail from './pages/magazineDetail/MagazineDetail';
-import ProductMap from './pages/productMap/ProductMap';
-import MyPage from './pages/myPage/MyPage';
-import ProductList from './pages/productList/ProductList';
-import ProductDetail from './pages/productDetail/ProductDetail';
-import Splash from './pages/splash/Splash';
+import LogIn from './pages/LogIn';
+import Home from './pages/Home';
+import MagazineDetail from './pages/MagazineDetail';
+import ProductMap from './pages/ProductMap';
+import MyPage from './pages/MyPage';
+import ProductList from './pages/ProductList';
+import ProductDetail from './pages/ProductDetail';
+import Splash from './pages/Splash';
 import './styles/Global.css';
 
 function App() {
