@@ -1,23 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import RankItemInfo from '../rankItemInfo/RankItemInfo';
 import { useNavigate } from 'react-router-dom';
+import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore';
+import { db } from '../../Firebase';
 
-export default function ProductRank({ productData }) {
+export default function ProductRank() {
   const navigate = useNavigate();
+  const [rankData, setRankData] = useState();
 
   const MAX_NUM = 3;
-  const sortedByLikeCount = [...productData].sort(
-    (a, b) => b.likeCount - a.likeCount,
-  );
-  const rankData = sortedByLikeCount.slice(0, MAX_NUM);
+
+  useEffect(() => {
+    const getRankData = async () => {
+      try {
+        const q = query(
+          collection(db, 'products'),
+          orderBy('likeCount', 'desc'),
+          limit(MAX_NUM),
+        );
+        const querySnapshot = await getDocs(q);
+        setRankData(querySnapshot.docs.map((doc) => ({ ...doc.data() })));
+      } catch (e) {
+        alert('error');
+        console.log(e);
+      }
+    };
+    getRankData();
+  }, []);
 
   return (
     <section>
       <h3>랭킹</h3>
       <ol>
-        {rankData.map((item, index) => (
+        {rankData?.map((item, index) => (
           <li key={item.product_id}>
-            <RankItemInfo productData={item} rank={index} />
+            <RankItemInfo data={item} rank={index} />
           </li>
         ))}
       </ol>

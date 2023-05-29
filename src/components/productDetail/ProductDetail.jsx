@@ -1,4 +1,5 @@
 import React from 'react';
+import LikeBtn from '../common/likeBtn/LikeBtn';
 
 export default function ProductDetail() {
   return (
@@ -31,7 +32,7 @@ export default function ProductDetail() {
         </div>
       </dl>
       <p>제품 설명</p>
-      <button>안 마셔봤어요</button>
+      <LikeBtn />
     </div>
   );
 }

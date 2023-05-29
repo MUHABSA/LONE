@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { db } from './Firebase';
-import { collection, getDocs, query } from 'firebase/firestore';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { IsLoginProvider } from './context/IsLoginContext';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
@@ -21,7 +21,7 @@ function App() {
   const productCollectionRef = collection(db, 'products');
   const getData = async () => {
     try {
-      const q = query(productCollectionRef);
+      const q = query(productCollectionRef, orderBy('likeCount', 'desc'));
       const data = await getDocs(q);
       const newData = data.docs.map((doc) => ({ ...doc.data() }));
       setProductData(newData);
@@ -44,7 +44,7 @@ function App() {
             <Route path="/login" element={<LogIn />} />
           </Route>
           <Route element={<PrivateRoute />}>
-            <Route path="/home" element={<Home productData={productData} />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/magazine/:id" element={<MagazineDetail />} />
             <Route
               path="/map"
