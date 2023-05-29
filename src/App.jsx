@@ -44,7 +44,7 @@ function App() {
             <Route path="/login" element={<LogIn />} />
           </Route>
           <Route element={<PrivateRoute />}>
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home productData={productData} />} />
             <Route path="/magazine/:id" element={<MagazineDetail />} />
             <Route
               path="/map"
