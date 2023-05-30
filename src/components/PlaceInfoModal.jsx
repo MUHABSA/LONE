@@ -7,18 +7,21 @@ export default function PlaceInfoModal({
   productData,
   selectedSeller,
 }) {
+  const selectedPlaces = productData?.filter(
+    (item) => item.seller === selectedSeller,
+  );
+  const selectedAddress = selectedPlaces[0].address;
+
   return (
     <section>
       <h3>{selectedSeller}</h3>
-      <address>상세주소?</address>
+      <address>{selectedAddress}</address>
       <ul>
-        {productData
-          ?.filter((item) => item.seller === selectedSeller)
-          .map((item) => (
-            <li key={item.product_id}>
-              <ProductCard data={item} />
-            </li>
-          ))}
+        {selectedPlaces.map((item) => (
+          <li key={item.product_id}>
+            <ProductCard data={item} />
+          </li>
+        ))}
       </ul>
       <button
         onClick={() => {
