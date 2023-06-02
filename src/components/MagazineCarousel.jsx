@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { collection, getDocs, limit, query } from 'firebase/firestore';
 import { db } from '../Firebase';
 import styled from 'styled-components';
@@ -8,6 +8,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 export default function MagazineCarousel() {
+  const navigate = useNavigate();
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -27,16 +28,16 @@ export default function MagazineCarousel() {
   return (
     <section>
       <h3>오늘의 추천 기사~등 리더기용 타이틀</h3>
-      {/* 캐러셀 라이브러리 들어갈 곳 
-      우선은 제일 바깥 레이아웃(크기,위치)만 잡아두면 될듯
-      */}
       <SlickSlider {...setting}>
         {articles.map((item) => (
-          <Link to={`/magazine/${item.id}`} key={item.id}>
+          <div
+            key={item.id}
+            onClick={() => navigate(`/magazine/${item.id}`, { state: item })}
+          >
             {/* 사진 위에 제목 넣고싶으면 주석 해제해서 쓰면 됨 */}
             {/* <strong>{item.title}</strong> */}
             <img src={item.image} alt={item.alt} />
-          </Link>
+          </div>
         ))}
       </SlickSlider>
     </section>
