@@ -33,11 +33,7 @@ const LikeBtn = forwardRef(
 
     return (
       <button onClick={handleClickLikeBtn} ref={ref}>
-        {matchProductDetail ? (
-          <span>마셔봤어요! 연결할래요</span>
-        ) : (
-          <span>마셔봤어요 토글 버튼 ir</span>
-        )}
+        {matchProductDetail ? <span>마셔봤어요! 연결할래요</span> : <span />}
       </button>
     );
   },

@@ -1,8 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore';
 import { db } from '../Firebase';
 import RankItemInfo from './RankItemInfo';
+
+const ListSection = styled.div`
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  background: #f9f6ff;
+  z-index: 2;
+  position: relative;
+  top: -50px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+`;
+
+const ListTitle = styled.p`
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+`;
+
+const ProductBtn = styled.button`
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #7c6add;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 2px;
+`;
 
 export default function ProductRank() {
   const navigate = useNavigate();
@@ -29,8 +57,8 @@ export default function ProductRank() {
   }, []);
 
   return (
-    <section>
-      <h3>랭킹</h3>
+    <ListSection>
+      <ListTitle>전국 전통주 랭킹을 확인하고, 전통주와 연결해보세요</ListTitle>
       <ol>
         {rankData?.map((item, index) => (
           <li key={item.product_id}>
@@ -38,13 +66,13 @@ export default function ProductRank() {
           </li>
         ))}
       </ol>
-      <button
+      <ProductBtn
         onClick={() => {
           navigate('/productList');
         }}
       >
         연결 가능한 전통주 보러가기
-      </button>
-    </section>
+      </ProductBtn>
+    </ListSection>
   );
 }

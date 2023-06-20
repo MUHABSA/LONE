@@ -1,7 +1,24 @@
+@font-face {
+  font-family: 'DosKor';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/DosKor.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cafe24Ssurround';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   text-align: center;
-  font-family: 'Pretendard-Black';
+  font-family: 'DosKor';
+  letter-spacing: 1px;
 }
 
 body {
@@ -10,4 +27,34 @@ body {
   margin: 0px auto;
   border: 1px solid rgb(226, 226, 226);
   background-color: #f9f6fe;
+}
+
+p {
+  font-size: 13px;
+}
+
+li {
+  list-style: none;
+}
+
+ol {
+  padding-inline-start: 0px;
+}
+
+.srOnly {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
+
+  height: 1px;
+
+  padding: 0;
+
+  margin: -1px;
+
+  border: 0;
+
+  clip: rect(0, 0, 0, 0);
 }

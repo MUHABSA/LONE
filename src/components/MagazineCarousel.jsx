@@ -27,7 +27,7 @@ export default function MagazineCarousel() {
 
   return (
     <section>
-      <h3>오늘의 추천 기사~등 리더기용 타이틀</h3>
+      <h1 className="srOnly">오늘의 추천 기사~등 리더기용 타이틀</h1>
       <SlickSlider {...setting}>
         {articles.map((item) => (
           <div
