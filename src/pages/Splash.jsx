@@ -27,7 +27,7 @@ const SplashText = styled.p`
 const LoginBtn = styled.button`
   background-color: #fee500;
   width: 60%;
-  padding: 2px 0;
+  padding: 4px 0;
   border-radius: 25px;
   border: none;
   &:last-child {
@@ -40,15 +40,16 @@ const LoginBtn = styled.button`
 const KakaoLogo = styled.img`
   display: inline;
   margin: 0px 10px;
-  width: 18px;
+  width: 14px;
   vertical-align: top;
 `;
 
 const LoginTxt = styled.h1`
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
   color: #000;
   font-weight: normal;
+  letter-spacing: 1px;
 `;
 
 export default function Splash() {
