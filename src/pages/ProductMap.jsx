@@ -30,7 +30,7 @@ export default function ProductMap() {
   return (
     <>
       <div>
-        <Header />
+        {/* <Header /> */}
         <KakaoMap
           productData={productData}
           isMarkerClicked={isMarkerClicked}
