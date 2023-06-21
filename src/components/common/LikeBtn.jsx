@@ -4,14 +4,14 @@ import { useMatch } from 'react-router-dom';
 import { db } from '../../Firebase';
 import { doc, updateDoc } from 'firebase/firestore';
 import likedBtn from '../../assets/img/logo.png';
-import unlikedBtn from '../../assets/img/link.png';
+import unlikedBtn from '../../assets/img/logo-gray.png';
 //unlikedBtn 변수에 회색 이미지 경로 넣으면 됩니다
 
 const LikeButtonMain = styled.button`
   //메인페이지에서 보이는 버튼 스타일링
   background: url(${(props) => (props.isLiked ? likedBtn : unlikedBtn)});
   background-size: contain;
-  width: 30px;
+  width: 31px;
   height: 30px;
   border: none;
 `;
