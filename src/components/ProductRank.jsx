@@ -14,6 +14,7 @@ const ListSection = styled.div`
   top: -50px;
   padding-top: 10px;
   padding-bottom: 50px;
+  text-align: center;
 `;
 
 const ListTitle = styled.p`
@@ -30,6 +31,7 @@ const ProductBtn = styled.button`
   border-radius: 20px;
   font-size: 12px;
   letter-spacing: 2px;
+  position: inline-block;
 `;
 
 export default function ProductRank() {
