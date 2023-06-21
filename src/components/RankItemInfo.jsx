@@ -5,7 +5,6 @@ import { db } from '../Firebase';
 import LikeBtn from './common/LikeBtn';
 import { useNavigate } from 'react-router-dom';
 import linkImg from '../assets/img/link.png';
-import likeBtn from '../assets/img/logo.png';
 
 const ItemContainer = styled.div`
   width: 100%;
@@ -105,14 +104,6 @@ const LikeCount = styled.p`
   margin-right: 5px;
 `;
 
-const LikeButton = styled.button`
-  background: url(${likeBtn});
-  background-size: contain;
-  width: 30px;
-  height: 30px;
-  border: none;
-`;
-
 export default function RankItemInfo({ data, rank }) {
   const navigate = useNavigate();
   const buttonRef = useRef();
@@ -159,16 +150,14 @@ export default function RankItemInfo({ data, rank }) {
             <LikeCount>
               <span>{likeCount}</span>명이 연결됐어요
             </LikeCount>
-            <LikeButton>
-              <LikeBtn
-                ref={buttonRef}
-                productId={productId}
-                isLiked={isLiked}
-                setIsLiked={setIsLiked}
-                likeCount={likeCount}
-                setLikeCount={setLikeCount}
-              />
-            </LikeButton>
+            <LikeBtn
+              ref={buttonRef}
+              productId={productId}
+              isLiked={isLiked}
+              setIsLiked={setIsLiked}
+              likeCount={likeCount}
+              setLikeCount={setLikeCount}
+            />
           </LikeContainer>
         </RightInner>
       </RightItem>
