@@ -5,6 +5,19 @@ import Header from '../components/common/Header';
 import ProductDetailCard from '../components/ProductDetailCard';
 import NavBar from '../components/common/NavBar';
 import CategoryNav from '../components/CategoryNav';
+import styled from 'styled-components';
+
+const PLSection = styled.ul`
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 5px;
+`;
+
+const PLList = styled.li`
+  display: inline-block;
+`;
 
 export default function ProductList() {
   const [category, setCategory] = useState('막걸리');
@@ -29,15 +42,16 @@ export default function ProductList() {
       <Header />
       <CategoryNav setCategory={setCategory} />
 
-      <ul>
+      <PLSection>
         {productData
           ?.filter((item) => item.category === category)
           .map((item) => (
-            <li key={item.product_id}>
+            <PLList key={item.product_id}>
               <ProductDetailCard productDetail={item} />
-            </li>
+            </PLList>
           ))}
-      </ul>
+      </PLSection>
+
       <NavBar />
     </div>
   );
