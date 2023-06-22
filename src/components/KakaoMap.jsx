@@ -115,7 +115,7 @@ export default function KakaoMap({
   //임시 스타일링(추후 스타일드 컴포넌트로 교체)
   const style = {
     width: '100%',
-    height: '800px',
+    height: '900px',
   };
 
   return <div id="map" style={style}></div>;

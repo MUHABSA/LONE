@@ -26,12 +26,12 @@ const ProductBtn = styled.button`
   margin-top: 20px;
   padding: 12px 30px;
   background: #7c6add;
-  border: none;
   color: #fff;
   border-radius: 20px;
   font-size: 12px;
   letter-spacing: 2px;
   position: inline-block;
+  border: 1px solid #e5e5e5;
 `;
 
 export default function ProductRank() {
