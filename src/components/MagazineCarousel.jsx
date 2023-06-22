@@ -140,17 +140,19 @@ const SlickSlider = styled(Slider)`
   }
   // 그라데이션 설정
   .slick-prev:hover:before {
+    background: rgb(255, 255, 255);
     background: linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.30976897594975494) 0%,
+      rgba(255, 255, 255, 0.2145308807116597) 0%,
       rgba(255, 255, 255, 0) 100%
     );
   }
   .slick-next:hover:before {
+    background: rgb(255, 255, 255);
     background: linear-gradient(
       90deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 0.30976897594975494) 100%
+      rgba(255, 255, 255, 0.2145308807116597) 100%
     );
   }
 `;
