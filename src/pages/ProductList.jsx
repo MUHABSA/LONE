@@ -13,6 +13,7 @@ const PLSection = styled.ul`
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0 5px;
+  padding-bottom: 70px;
 `;
 
 const PLList = styled.li`
