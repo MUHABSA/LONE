@@ -5,6 +5,9 @@ import { db } from '../../Firebase';
 import { doc, updateDoc } from 'firebase/firestore';
 import likedBtn from '../../assets/img/logo.png';
 import unlikedBtn from '../../assets/img/logo-gray.png';
+import DetailLikedBtn from '../../assets/img/pd-active.png';
+import DetailUnlikedBtn from '../../assets/img/pd.png';
+
 //unlikedBtn 변수에 회색 이미지 경로 넣으면 됩니다
 
 const LikeButtonMain = styled.button`
@@ -18,10 +21,12 @@ const LikeButtonMain = styled.button`
 
 const LikeButtonDetail = styled.button`
   //상세보기 페이지에 들어가는 버튼 스타일링은 여기다 하면 됩니다
-  background: url(${(props) => (props.isLiked ? likedBtn : unlikedBtn)});
+  background: url(${(props) =>
+      props.isLiked ? DetailLikedBtn : DetailUnlikedBtn})
+    no-repeat;
   background-size: contain;
-  width: 30px;
-  height: 30px;
+  width: 210px;
+  height: 40px;
   border: none;
 `;
 
@@ -60,9 +65,7 @@ const LikeBtn = forwardRef(
             onClick={handleClickLikeBtn}
             ref={ref}
             isLiked={isLiked}
-          >
-            <span>마셔봤어요! 연결할래요</span>
-          </LikeButtonDetail>
+          />
         ) : (
           <LikeButtonMain
             onClick={handleClickLikeBtn}

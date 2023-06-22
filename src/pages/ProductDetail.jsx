@@ -5,6 +5,17 @@ import { db } from '../Firebase';
 import Header from '../components/common/Header';
 import ProductDetail from '../components/ProductDetail';
 import LikeBtn from '../components/common/LikeBtn';
+import styled from 'styled-components';
+
+const PDContainer = styled.div``;
+
+const Btn = styled.div`
+  text-align: center;
+
+  button {
+    display: inline-block;
+  }
+`;
 
 export default function ProductDetailPage() {
   const { id } = useParams();
@@ -36,16 +47,18 @@ export default function ProductDetailPage() {
   }, []);
 
   return (
-    <div>
+    <PDContainer>
       <Header />
       <ProductDetail data={productData} />
-      <LikeBtn
-        productId={productId}
-        isLiked={isLiked}
-        setIsLiked={setIsLiked}
-        likeCount={likeCount}
-        setLikeCount={setLikeCount}
-      />
-    </div>
+      <Btn>
+        <LikeBtn
+          productId={productId}
+          isLiked={isLiked}
+          setIsLiked={setIsLiked}
+          likeCount={likeCount}
+          setLikeCount={setLikeCount}
+        />
+      </Btn>
+    </PDContainer>
   );
 }

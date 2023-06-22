@@ -5,7 +5,7 @@ const PDetailContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px 10px;
+  padding: 10px;
 `;
 
 const PDLeft = styled.div`
