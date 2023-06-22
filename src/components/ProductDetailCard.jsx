@@ -9,9 +9,9 @@ const ProductDetail = styled.div`
   text-align: center;
   color: black;
   width: 180px;
-  height: 300px;
+  height: 320px;
   border-radius: 20px;
-  border: 1px solid #efefef;
+  border: 1px solid #e5e5e5;
 `;
 
 const PLImg = styled.img`
@@ -46,13 +46,13 @@ const PLBottomSection = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 5px 0;
-  margin-top: 10px;
+  padding: 1px 0;
+  margin-top: 24px;
   background: #ebe6fc;
   font-size: 14px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  border-top: 1px solid #efefef;
+  border: 1px solid #e5e5e5;
 
   p {
     font-weight: 300;
