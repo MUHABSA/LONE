@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PLinkImg from '../assets/img/logo.png';
+import LikedImg from '../assets/img/logo.png';
+import UnlikedImg from '../assets/img/logo-gray.png';
 
 const ProductDetail = styled.div`
   margin: 20px 10px;
@@ -82,10 +84,12 @@ export default function ProductDetailCard({ productDetail }) {
         </PLAbv>
         <PLBottomSection>
           <p>
-            {' '}
             <strong>{productDetail.likeCount}명</strong>이 연결됐어요
           </p>
-          <PLink src={PLinkImg} alt="로네 링크 이미지" />
+          <PLink
+            src={productDetail.liked ? LikedImg : UnlikedImg}
+            alt="로네 링크 이미지"
+          />
         </PLBottomSection>
         {/* 모아보기 페이지 좋아요 기능도 넣을 경우 아래 이미지는 추후 버튼으로 변경 */}
       </ProductDetail>
