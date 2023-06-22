@@ -96,7 +96,7 @@ const SlickSlider = styled(Slider)`
   // 💜 dot 자체를 스타일링 하고 싶을 경우
   .slick-dots {
     position: absolute;
-    bottom: 1px;
+    bottom: 45px; //스크롤 컨트롤러 위아래로 조절하려면 이거 조정하면 됩니다
     li {
       padding: 0 50px; // button::before의 width값의 반으로 주면 dot끼리 딱 붙음(참고)
       opacity: 0.5;
