@@ -51,7 +51,7 @@ export default function ProductCard({ data }) {
       <CardSection>
         <CardImg>
           <img src={data.image} alt="" />
-          <StampImg src={ScrapImg} />
+          {data.liked ? <StampImg src={ScrapImg} /> : null}
         </CardImg>
 
         <p>{data.product_name}</p>
