@@ -22,6 +22,11 @@ const BackBtn = styled.button`
   border: none;
 `;
 
+const MyPageHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export default function Header() {
   const navigate = useNavigate();
   const matchMap = useMatch('/map');
@@ -34,12 +39,7 @@ export default function Header() {
       {matchMap ? <SearchBar /> : null}
       {matchProductList ? <ListHeader>전통주 모아보기</ListHeader> : null}
       {matchProductDetail ? <BackBtn onClick={() => navigate(-1)} /> : null}
-      {matchMyPage ? (
-        <div>
-          <h3>전통주 스크랩북</h3>
-          <LogoutBtn />
-        </div>
-      ) : null}
+      {matchMyPage ? <LogoutBtn /> : null}
     </header>
   );
 }
