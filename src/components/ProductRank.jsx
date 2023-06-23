@@ -15,6 +15,7 @@ const ListSection = styled.div`
   padding-top: 10px;
   padding-bottom: 50px;
   text-align: center;
+  box-shadow: #8f81d361 0px 1px 5px;
 `;
 
 const ListTitle = styled.p`
