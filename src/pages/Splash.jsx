@@ -10,6 +10,7 @@ const SplashWrap = styled.div`
   background-size: cover;
   min-height: 100vh;
   width: 100%;
+  text-align: center;
 `;
 
 const Logo = styled.img`

@@ -10,7 +10,9 @@ const ListHeader = styled.h1`
   font-weight: 500;
   font-size: 18px;
   margin-left: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  margin-top: 0px;
 `;
 
 const BackBtn = styled.button`
