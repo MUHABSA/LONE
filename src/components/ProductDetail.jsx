@@ -54,10 +54,20 @@ const PDDetail = styled.div`
   margin: 20px 0;
   border: 1px solid #e5e5e5;
   border-radius: 10px;
-  padding: 0 15px;
+  padding: 5px 10px;
+  line-height: 1.5;
+
+  word-break: keep-all;
+  p {
+    letter-spacing: 2px;
+    word-break: keep-all;
+    margin-left: 2px;
+    white-space: pre-line;
+  }
 `;
 
 export default function ProductDetail({ data }) {
+  // prettier-ignore
   return (
     <PDetailContainer>
       <PDLeft>
@@ -90,8 +100,9 @@ export default function ProductDetail({ data }) {
           </div>
         </dl>
       </PDRight>
+
       <PDDetail>
-        <p>제품 설명</p>
+        <p>{data.description}</p>
       </PDDetail>
     </PDetailContainer>
   );
