@@ -4,9 +4,12 @@ import styled from 'styled-components';
 import x from '../assets/img/x.png';
 
 const MapModal = styled.div`
-  background: #ebe6fc;
-  box-shadow: rgba(152, 152, 152, 0.24) 0px 3px 8px;
-  border-radius: 20px;
+  background: #f8f7ff;
+  border: 1px solid #e2dff2;
+  box-shadow: #8f81d361 0px -1px 5px;
+  border-radius: 30px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -26,6 +29,9 @@ const MapModal = styled.div`
     font-size: 12px;
     font-weight: 300;
     letter-spacing: 3px;
+    margin-left: 8px;
+    margin-top: -5px;
+    margin-bottom: 5px;
   }
 
   ul {
@@ -52,6 +58,8 @@ const MMHeader = styled.div`
   flex-direction: row;
   align-content: center;
   justify-content: space-between;
+  padding: 3px 8px;
+  padding-right: 10px;
 
   button {
     background: url(${x}) no-repeat;
@@ -67,6 +75,7 @@ const MMTitle = styled.h1`
   letter-spacing: 3px;
   margin: 1px;
   justify-content: space-between;
+  color: rgb(85 65 201);
 `;
 
 export default function PlaceInfoModal({

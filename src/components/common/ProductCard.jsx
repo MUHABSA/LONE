@@ -11,7 +11,7 @@ const CardSection = styled.div`
   width: 120px;
   height: 180px;
   border-radius: 20px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid rgb(209 202 245 / 45%);
   box-shadow: rgba(190, 190, 190, 0.24) 0px 1px 6px;
 
   img {
