@@ -26,6 +26,7 @@ export default function NavBar() {
     border-top-right-radius: 50px;
     box-shadow: 0px -2px 2px rgba(244, 244, 244);
     background: #ffffff;
+    text-align: center;
 
     ul {
       display: flex;
@@ -33,6 +34,7 @@ export default function NavBar() {
       justify-content: space-around;
       align-items: center;
       list-style: none;
+      margin-left: 20px;
     }
 
     li {

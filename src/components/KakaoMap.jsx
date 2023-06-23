@@ -21,7 +21,7 @@ export default function KakaoMap({
     const container = document.getElementById('map');
     const options = {
       center: new kakao.maps.LatLng(DEFAULT_LAT, DEFAULT_LNG),
-      level: 13,
+      level: 12,
     };
     const map = new kakao.maps.Map(container, options);
 
@@ -115,7 +115,7 @@ export default function KakaoMap({
   //임시 스타일링(추후 스타일드 컴포넌트로 교체)
   const style = {
     width: '100%',
-    height: '900px',
+    height: '100vh',
   };
 
   return <div id="map" style={style}></div>;
