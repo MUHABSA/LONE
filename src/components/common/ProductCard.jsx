@@ -12,6 +12,7 @@ const CardSection = styled.div`
   height: 180px;
   border-radius: 20px;
   border: 1px solid #e5e5e5;
+  box-shadow: rgba(190, 190, 190, 0.24) 0px 1px 6px;
 
   img {
     width: 100%;
@@ -24,6 +25,7 @@ const CardSection = styled.div`
     color: black;
     padding: 0px 5px 10px;
     margin: 25px 0;
+    word-break: keep-all;
   }
 `;
 
@@ -41,7 +43,7 @@ const StampImg = styled.img`
   object-fit: cover;
   z-index: 5;
   position: absolute;
-  top: 0;
+  top: 1px;
   right: 2px;
 `;
 

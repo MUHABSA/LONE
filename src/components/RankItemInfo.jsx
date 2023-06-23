@@ -26,6 +26,7 @@ const LeftItem = styled.div`
   background: #fff;
   border: #eeeeee 1px solid;
   align-items: center;
+  box-shadow: rgba(190, 190, 190, 0.24) 0px 1px 6px;
 `;
 const ItemNumber = styled.div`
   position: relative;
@@ -61,6 +62,7 @@ const RightItem = styled.div`
   margin-bottom: 8px;
   background: #fff;
   border: #eeeeee 1px solid;
+  box-shadow: rgba(190, 190, 190, 0.24) 0px 1px 6px;
 `;
 
 const RightInner = styled.div`

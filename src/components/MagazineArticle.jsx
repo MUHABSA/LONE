@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MagContainer = styled.article``;
+const MagContainer = styled.article`
+  height: 100vh;
+`;
 
 const MagImg = styled.img`
   width: 100%;

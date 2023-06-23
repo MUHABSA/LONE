@@ -31,7 +31,8 @@ const ProductBtn = styled.button`
   font-size: 12px;
   letter-spacing: 2px;
   position: inline-block;
-  border: 1px solid #e5e5e5;
+  border: none;
+  box-shadow: rgba(142, 140, 140, 0.838) 0px 1px 6px;
 `;
 
 export default function ProductRank() {

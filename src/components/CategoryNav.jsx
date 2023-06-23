@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const NavSection = styled.nav`
@@ -21,7 +21,6 @@ const NavContent = styled.li`
     background: #9f92e9;
     color: white;
   }
-
   &.active {
     background: #7c6add;
     color: white;
@@ -29,44 +28,28 @@ const NavContent = styled.li`
 `;
 
 export default function CategoryNav({ setCategory }) {
+  const categories = ['막걸리', '증류주', '약주', '와인', '기타'];
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const toggleActive = (e) => {
+    setActiveIndex(e.target.value);
+  };
+
   return (
     <NavSection>
       <ul>
-        <NavContent
-          onClick={() => {
-            setCategory('막걸리');
-          }}
-        >
-          막걸리
-        </NavContent>
-        <NavContent
-          onClick={() => {
-            setCategory('증류주');
-          }}
-        >
-          증류주
-        </NavContent>
-        <NavContent
-          onClick={() => {
-            setCategory('약주');
-          }}
-        >
-          약주
-        </NavContent>
-        <NavContent
-          onClick={() => {
-            setCategory('와인');
-          }}
-        >
-          와인
-        </NavContent>
-        <NavContent
-          onClick={() => {
-            setCategory('기타');
-          }}
-        >
-          기타
-        </NavContent>
+        {categories.map((item, index) => (
+          <NavContent
+            value={index}
+            className={index === activeIndex ? 'active' : ''}
+            onClick={(e) => {
+              setCategory(item);
+              toggleActive(e);
+            }}
+          >
+            {item}
+          </NavContent>
+        ))}
       </ul>
     </NavSection>
   );

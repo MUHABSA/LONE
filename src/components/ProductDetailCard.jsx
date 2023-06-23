@@ -14,6 +14,7 @@ const ProductDetail = styled.div`
   height: 320px;
   border-radius: 20px;
   border: 1px solid #e5e5e5;
+  box-shadow: rgba(152, 152, 152, 0.24) 0px 3px 5px;
 `;
 
 const PLImg = styled.img`
@@ -25,15 +26,17 @@ const PLTitle = styled.p`
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 3px;
-  color: black;
+  color: rgb(85 65 201);
   margin: 10px;
+  word-break: keep-all;
 `;
 
 const PLSeller = styled.p`
   font-size: 12px;
   letter-spacing: 3px;
   font-weight: 400;
-  margin: 1px;
+  margin-top: 20px;
+  margin-bottom: 1px;
 `;
 
 const PLAbv = styled.p`
@@ -41,6 +44,7 @@ const PLAbv = styled.p`
   letter-spacing: 2px;
   font-weight: 300;
   margin: 0px;
+  margin-top: 2px;
 `;
 
 const PLBottomSection = styled.div`
@@ -49,7 +53,7 @@ const PLBottomSection = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1px 0;
-  margin-top: 24px;
+  margin-top: 14px;
   background: #ebe6fc;
   font-size: 14px;
   border-bottom-left-radius: 20px;

@@ -32,6 +32,7 @@ export default function NavBar() {
       justify-content: space-around;
       align-items: center;
       list-style: none;
+      margin-left: 20px;
     }
 
     li {

@@ -7,7 +7,9 @@ import ProductDetail from '../components/ProductDetail';
 import LikeBtn from '../components/common/LikeBtn';
 import styled from 'styled-components';
 
-const PDContainer = styled.div``;
+const PDContainer = styled.div`
+  height: 100vh;
+`;
 
 const Btn = styled.div`
   text-align: center;
