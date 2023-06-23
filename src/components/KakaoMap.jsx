@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import markerClicked from '../assets/img/markerClicked.png';
 import markerDefault from '../assets/img/markerDefault.png';
 import markerVisited from '../assets/img/markerVisited.png';
@@ -14,16 +14,32 @@ export default function KakaoMap({
   const MARKER_WIDTH = 30;
   const MARKER_HEIGHT = 30;
 
+  const [defaultLat, setDefaultLat] = useState(35.8);
+  const [defaultLng, setDefaultLng] = useState(127.77);
   const DEFAULT_LAT = 35.8;
   const DEFAULT_LNG = 127.77;
 
   useEffect(() => {
     const container = document.getElementById('map');
     const options = {
-      center: new kakao.maps.LatLng(DEFAULT_LAT, DEFAULT_LNG),
+      center: new kakao.maps.LatLng(defaultLat, defaultLng),
       level: 12,
     };
     const map = new kakao.maps.Map(container, options);
+
+    // 현재 위치로 중심 설정
+    const getCurrentLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          setDefaultLat(position.coords.latitude);
+          setDefaultLng(position.coords.longitude);
+        });
+      } else {
+        setDefaultLat(DEFAULT_LAT);
+        setDefaultLng(DEFAULT_LNG);
+      }
+    };
+    getCurrentLocation();
 
     // 양조장명으로 오름차순 정렬
     productData?.sort((a, b) =>
@@ -115,7 +131,7 @@ export default function KakaoMap({
   //임시 스타일링(추후 스타일드 컴포넌트로 교체)
   const style = {
     width: '100%',
-    height: '100vh',
+    minHeight: '100vh',
   };
 
   return <div id="map" style={style}></div>;
