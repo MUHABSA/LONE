@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard from './common/ProductCard';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import x from '../assets/img/x.png';
+
+const slide = keyframes`
+  from {
+    transform: translateY(330px);
+  } 
+  to{
+    transform: translateY(0);
+  }
+`;
 
 const MapModal = styled.div`
   background: #f8f7ff;
@@ -23,6 +32,15 @@ const MapModal = styled.div`
   z-index: 5;
   text-align: left;
   padding: 15px 10px 0;
+
+  &.openModal {
+    animation: ${slide} 0.4s ease-out normal forwards;
+    //duration값 수정을 원할 경우 useEffect 내부 setTimeout메서드의 밀리초도 맞춰서 변경해주세요
+  }
+  &.closeModal {
+    animation: ${slide} 0.2s ease-out reverse forwards;
+    //duration값 수정을 원할 경우 닫기버튼의 onClick 함수 내부 setTimeout메서드의 밀리초도 맞춰서 변경해주세요
+  }
 
   address {
     font-size: 12px;
@@ -89,17 +107,26 @@ export default function PlaceInfoModal({
   );
   const selectedAddress = selectedPlaces[0].address;
 
+  const [animation, setAnimation] = useState('openModal');
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimation('');
+    }, 400);
+  }, []);
+
   return (
-    <MapModal>
+    <MapModal className={animation}>
       <MMHeader>
         <MMTitle>{selectedSeller}</MMTitle>
         <button
           onClick={() => {
-            setIsMarkerClicked(!isMarkerClicked);
+            setAnimation('closeModal');
+            setTimeout(() => {
+              setIsMarkerClicked(!isMarkerClicked);
+            }, 200);
           }}
         />
       </MMHeader>
-
       <address>{selectedAddress}</address>
       <ul>
         {selectedPlaces.map((item) => (
