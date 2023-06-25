@@ -5,7 +5,7 @@ import NavBar from '../components/common/NavBar';
 import styled from 'styled-components';
 
 const MyPageContainer = styled.div`
-  height: 100vh;
+  height: 100%;
 `;
 
 export default function MyPage() {
