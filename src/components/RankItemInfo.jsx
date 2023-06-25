@@ -13,6 +13,7 @@ const ItemContainer = styled.div`
   flex-wrap: wrap;
   padding: 0 10px;
   margin-bottom: 8px;
+  cursor: pointer;
 `;
 
 const LeftItem = styled.div`

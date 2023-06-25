@@ -20,7 +20,6 @@ const MapModal = styled.div`
   bottom: 1px;
   font-weight: 700;
   align-items: left;
-  cursor: pointer;
   z-index: 5;
   text-align: left;
   padding: 15px 10px 0;
@@ -67,6 +66,7 @@ const MMHeader = styled.div`
     width: 15px;
     height: 15px;
     border: none;
+    cursor: pointer;
   }
 `;
 
