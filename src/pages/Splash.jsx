@@ -31,6 +31,7 @@ const LoginBtn = styled.button`
   padding: 4px 0;
   border-radius: 25px;
   border: none;
+  cursor: pointer;
   &:last-child {
     //임시 스타일링
     margin-top: 10px;

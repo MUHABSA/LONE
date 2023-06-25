@@ -22,6 +22,7 @@ const BackBtn = styled.button`
   height: 21px;
   background-size: contain;
   border: none;
+  cursor: pointer;
 `;
 
 const MyPageHeader = styled.div`

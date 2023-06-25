@@ -34,6 +34,7 @@ const ProductBtn = styled.button`
   position: inline-block;
   border: none;
   box-shadow: rgba(142, 140, 140, 0.838) 0px 1px 6px;
+  cursor: pointer;
 `;
 
 export default function ProductRank() {

@@ -16,6 +16,7 @@ const NavContent = styled.li`
   font-size: 13px;
   letter-spacing: 3px;
   text-align: center;
+  cursor: pointer;
 
   &:hover {
     background: #9f92e9;

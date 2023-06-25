@@ -17,65 +17,55 @@ const LikeButtonMain = styled.button`
   width: 31px;
   height: 30px;
   border: none;
+  cursor: pointer;
 `;
 
 const LikeButtonDetail = styled.button`
   //상세보기 페이지에 들어가는 버튼 스타일링은 여기다 하면 됩니다
-  background: url(${(props) =>
-      props.isLiked ? DetailLikedBtn : DetailUnlikedBtn})
-    no-repeat;
+  background: url(${(props) => (props.isLiked ? DetailLikedBtn : DetailUnlikedBtn)}) no-repeat;
   background-size: contain;
   width: 210px;
   height: 40px;
   border: none;
+  cursor: pointer;
 `;
 
-const LikeBtn = forwardRef(
-  ({ productId, isLiked, setIsLiked, likeCount, setLikeCount }, ref) => {
-    const handleClickLikeBtn = async (e) => {
-      e.stopPropagation();
-      const productRef = doc(db, 'products', productId);
-      try {
-        if (isLiked) {
-          await updateDoc(productRef, {
-            likeCount: likeCount - 1,
-            liked: !isLiked,
-          });
-          setLikeCount(likeCount - 1);
-          setIsLiked(!isLiked);
-        } else {
-          await updateDoc(productRef, {
-            likeCount: likeCount + 1,
-            liked: !isLiked,
-          });
-          setLikeCount(likeCount + 1);
-          setIsLiked(!isLiked);
-        }
-      } catch (e) {
-        console.log(e);
+const LikeBtn = forwardRef(({ productId, isLiked, setIsLiked, likeCount, setLikeCount }, ref) => {
+  const handleClickLikeBtn = async (e) => {
+    e.stopPropagation();
+    const productRef = doc(db, 'products', productId);
+    try {
+      if (isLiked) {
+        await updateDoc(productRef, {
+          likeCount: likeCount - 1,
+          liked: !isLiked,
+        });
+        setLikeCount(likeCount - 1);
+        setIsLiked(!isLiked);
+      } else {
+        await updateDoc(productRef, {
+          likeCount: likeCount + 1,
+          liked: !isLiked,
+        });
+        setLikeCount(likeCount + 1);
+        setIsLiked(!isLiked);
       }
-    };
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-    const matchProductDetail = useMatch('/product/:id');
+  const matchProductDetail = useMatch('/product/:id');
 
-    return (
-      <>
-        {matchProductDetail ? (
-          <LikeButtonDetail
-            onClick={handleClickLikeBtn}
-            ref={ref}
-            isLiked={isLiked}
-          />
-        ) : (
-          <LikeButtonMain
-            onClick={handleClickLikeBtn}
-            ref={ref}
-            isLiked={isLiked}
-          ></LikeButtonMain>
-        )}
-      </>
-    );
-  },
-);
+  return (
+    <>
+      {matchProductDetail ? (
+        <LikeButtonDetail onClick={handleClickLikeBtn} ref={ref} isLiked={isLiked} />
+      ) : (
+        <LikeButtonMain onClick={handleClickLikeBtn} ref={ref} isLiked={isLiked}></LikeButtonMain>
+      )}
+    </>
+  );
+});
 
 export default LikeBtn;

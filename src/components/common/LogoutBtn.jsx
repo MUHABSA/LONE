@@ -14,6 +14,7 @@ const Logout = styled.div`
     border: none;
     display: inline-block;
     letter-spacing: 2px;
+    cursor: pointer;
   }
 `;
 

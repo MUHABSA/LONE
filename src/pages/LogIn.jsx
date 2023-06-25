@@ -57,6 +57,7 @@ const LoginBtn = styled.button`
   color: white;
   font-size: 14px;
   letter-spacing: 3px;
+  cursor: pointer;
 `;
 
 export default function LogIn() {
