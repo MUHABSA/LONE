@@ -66,7 +66,7 @@ const SlickSlider = styled(Slider)`
   // 슬라이드별 이미지 스타일링
   .slick-slide img {
     width: 100%;
-    height: 500px;
+    height: 550px;
     object-fit: cover;
   }
 
@@ -123,7 +123,7 @@ const SlickSlider = styled(Slider)`
   .slick-prev,
   .slick-next {
     width: 100px; //호버했을 시 진하게 표시되는 부분 너비
-    height: 500px;
+    height: 550px;
     z-index: 1; //ProductRank z-index가 2라서 1로 설정했습니다(랭킹탭 뒤로 숨겨지도록)
   }
   .slick-prev {
@@ -135,7 +135,7 @@ const SlickSlider = styled(Slider)`
   .slick-prev:before,
   .slick-next:before {
     display: block;
-    height: 500px; //호버했을 시 진하게 표시되는 부분 높이(캐러셀 이미지 사이즈에 맞춤)
+    height: 550px; //호버했을 시 진하게 표시되는 부분 높이(캐러셀 이미지 사이즈에 맞춤)
     font-size: 0px; //1px 이상으로 설정하면 화살표 버튼이 나타납니다
   }
   // 그라데이션 설정
