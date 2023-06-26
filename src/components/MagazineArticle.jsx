@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MagContainer = styled.article`
-  height: 100vh;
+  height: 100%;
+  box-shadow: none;
 `;
 
 const MagImg = styled.img`
   width: 100%;
+  margin-bottom: 50px;
 `;
 
 // 스타일링 완료되면 삭제해주세요
