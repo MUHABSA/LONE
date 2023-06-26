@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Header from './common/Header';
 
 const MagContainer = styled.article`
   height: 100vh;
@@ -35,6 +36,7 @@ const MagImg = styled.img`
 export default function MagazineDetail({ data }) {
   return (
     <MagContainer>
+      <Header />
       <MagImg src={data.image_contents} alt={data.alt} />
       {/* 스타일링 완료되면 삭제해주세요
       <MagTextSection>
