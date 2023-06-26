@@ -36,7 +36,7 @@ export default function MagazineCarousel() {
           >
             {/* 사진 위에 제목 넣고싶으면 주석 해제해서 쓰면 됨 */}
             {/* <strong>{item.title}</strong> */}
-            <img src={item.image} alt={item.alt} />
+            <img src={item.image_thumbnail} alt={item.alt} />
           </div>
         ))}
       </SlickSlider>

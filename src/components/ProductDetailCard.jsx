@@ -84,7 +84,7 @@ export default function ProductDetailCard({ productDetail }) {
         <PLTitle>{productDetail.product_name}</PLTitle>
         <PLSeller>{productDetail.seller}</PLSeller>
         <PLAbv>
-          도수 <span>{productDetail.abv}</span>/ml
+          도수 <span>{productDetail.abv}</span>%
         </PLAbv>
         <PLBottomSection>
           <p>
