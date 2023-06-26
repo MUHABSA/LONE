@@ -25,13 +25,20 @@ const BackBtn = styled.button`
   cursor: pointer;
 `;
 
-const MyPageHeader = styled.div`
-  display: flex;
-  flex-direction: row;
+const CloseBtn = styled.button`
+  margin: 15px 10px;
+  /* 이부분 사진 url 수정하면 됩니다 */
+  background: url(${Back});
+  width: 8px;
+  height: 21px;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
 `;
 
 export default function Header() {
   const navigate = useNavigate();
+  const matchMagazine = useMatch('/magazine/:id');
   const matchMap = useMatch('/map');
   const matchProductList = useMatch('/productList');
   const matchProductDetail = useMatch('/product/:id');
@@ -42,6 +49,7 @@ export default function Header() {
       {matchMap ? <SearchBar /> : null}
       {matchProductList ? <ListHeader>전통주 모아보기</ListHeader> : null}
       {matchProductDetail ? <BackBtn onClick={() => navigate(-1)} /> : null}
+      {matchMagazine ? <CloseBtn onClick={() => navigate(-1)} /> : null}
       {matchMyPage ? <LogoutBtn /> : null}
     </header>
   );
