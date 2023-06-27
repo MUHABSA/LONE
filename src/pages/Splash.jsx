@@ -36,8 +36,9 @@ const LoginBtn = styled.button`
     //임시 스타일링
     margin-top: 10px;
     background-color: rgb(124, 106, 221);
+    color: #fff;
   }
-  box-shadow: rgba(187, 187, 187, 0.838) 0px 1px 6px
+  box-shadow: rgba(207, 207, 207, 0.838) 0px 1px 4px
 `;
 
 const KakaoLogo = styled.img`
