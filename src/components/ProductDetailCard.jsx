@@ -75,10 +75,14 @@ const PLink = styled.img`
   height: 30px;
 `;
 
+const LinkContainer = styled(Link)`
+  color: black;
+`;
+
 export default function ProductDetailCard({ productDetail }) {
   return (
     <ProductDetail>
-      <Link to={`/product/${productDetail.product_id}`}>
+      <LinkContainer to={`/product/${productDetail.product_id}`}>
         <PLImg src={productDetail.image} alt="" />
         <PLTitle>{productDetail.product_name}</PLTitle>
         <PLSeller>{productDetail.seller}</PLSeller>
@@ -94,7 +98,7 @@ export default function ProductDetailCard({ productDetail }) {
             alt="로네 링크 이미지"
           />
         </PLBottomSection>
-      </Link>
+      </LinkContainer>
     </ProductDetail>
   );
 }
