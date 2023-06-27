@@ -77,8 +77,8 @@ const PLink = styled.img`
 
 export default function ProductDetailCard({ productDetail }) {
   return (
-    <Link to={`/product/${productDetail.product_id}`}>
-      <ProductDetail>
+    <ProductDetail>
+      <Link to={`/product/${productDetail.product_id}`}>
         <PLImg src={productDetail.image} alt="" />
         <PLTitle>{productDetail.product_name}</PLTitle>
         <PLSeller>{productDetail.seller}</PLSeller>
@@ -94,7 +94,7 @@ export default function ProductDetailCard({ productDetail }) {
             alt="로네 링크 이미지"
           />
         </PLBottomSection>
-      </ProductDetail>
-    </Link>
+      </Link>
+    </ProductDetail>
   );
 }
