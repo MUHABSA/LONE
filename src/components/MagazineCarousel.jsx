@@ -52,8 +52,8 @@ const setting = {
   speed: 700, // dot, arrow 눌렀을 때 다음 슬라이드로 완전히 넘어가는데까지 걸리는 시간(ms)
   fade: false, // 페이드아웃 형식으로 다음 컨텐츠 보여주고 싶을 때(드래그해도 페이드아웃으로 넘어감)
   fadeSpeed: 700, // 페이드아웃 시간 (ms)
-  autoplay: false, // 다음 컨텐츠 자동으로 보여줄지
-  autoplaySpeed: 5000, // 오토플레이시 다음으로 넘어가는 간격 (ms)
+  autoplay: true, // 다음 컨텐츠 자동으로 보여줄지
+  autoplaySpeed: 3500, // 오토플레이시 다음으로 넘어가는 간격 (ms)
   pauseOnHover: true, // 슬라이드 이동시 마우스 호버하면 슬라이더 멈추게 설정
 };
 

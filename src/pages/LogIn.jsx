@@ -11,12 +11,13 @@ import { IsLoginContext } from '../context/IsLoginContext';
 const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 100px 30px;
+  min-height: 100vh;
+  padding: 100px 30px;
 `;
 
 const Title = styled.h1`
-  font-size: 22px;
-  letter-spacing: 5px;
+  font-size: 21px;
+  letter-spacing: 4px;
   margin-bottom: 100px;
   text-align: left;
   line-height: 1.4;
@@ -111,7 +112,7 @@ export default function LogIn() {
     <LoginContainer>
       <Title>
         안녕하세요! <br />
-        로네에 오신 것을 환영해요 🥂
+        로네에 오신 것을 환영해요🥂
       </Title>
 
       <form onSubmit={handleSubmit}>
