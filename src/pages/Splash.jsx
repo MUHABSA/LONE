@@ -37,6 +37,7 @@ const LoginBtn = styled.button`
     margin-top: 10px;
     background-color: #ddc9fd70;
   }
+  box-shadow: rgba(142, 140, 140, 0.838) 0px 1px 6px
 `;
 
 const KakaoLogo = styled.img`
