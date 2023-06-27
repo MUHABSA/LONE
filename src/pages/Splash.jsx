@@ -51,9 +51,12 @@ const KakaoLogo = styled.img`
 const LoginTxt = styled.h1`
   font-size: 12px;
   text-align: center;
-  color: #fff;
+  color: black;
   font-weight: normal;
   letter-spacing: 1px;
+  &:last-child {
+    color: white;
+   }
 `;
 
 export default function Splash() {
