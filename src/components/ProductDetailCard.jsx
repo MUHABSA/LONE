@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import PLinkImg from '../assets/img/logo.png';
 import LikedImg from '../assets/img/logo.png';
 import UnlikedImg from '../assets/img/logo-gray.png';
 
@@ -23,7 +22,7 @@ const PLImg = styled.img`
 `;
 
 const PLTitle = styled.p`
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 3px;
   color: rgb(85 65 201);
@@ -95,7 +94,6 @@ export default function ProductDetailCard({ productDetail }) {
             alt="로네 링크 이미지"
           />
         </PLBottomSection>
-        {/* 모아보기 페이지 좋아요 기능도 넣을 경우 아래 이미지는 추후 버튼으로 변경 */}
       </ProductDetail>
     </Link>
   );
