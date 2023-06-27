@@ -26,14 +26,16 @@ const BackBtn = styled.button`
 `;
 
 const CloseBtn = styled.button`
-  margin: 15px 10px;
   /* 이부분 사진 url 수정하면 됩니다 */
-  background: url(${Back});
-  width: 8px;
-  height: 21px;
+  background: url(${Back}) no-repeat;
+  height: 17px;
+  position: relative;
+  top: 15px;
+  left: 7px;
   background-size: contain;
   border: none;
   cursor: pointer;
+  z-index: 3;
 `;
 
 export default function Header() {
