@@ -136,7 +136,7 @@ export default function LogIn() {
             autoComplete="off"
           />
         </Label>
-        <LoginBtn type="submit" onClick={login}>
+        <LoginBtn type="button" onClick={login}>
           로그인
         </LoginBtn>
       </form>

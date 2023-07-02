@@ -109,12 +109,9 @@ export default function PlaceInfoModal({
 
   const [animation, setAnimation] = useState('openModal');
   useEffect(() => {
-    const resetTimer = setTimeout(() => {
+    setTimeout(() => {
       setAnimation('');
     }, 400);
-    return () => {
-      clearTimeout(resetTimer);
-    };
   }, []);
 
   return (
