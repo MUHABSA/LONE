@@ -26,7 +26,7 @@
 <br>
 
 ## 🥂 팀원 소개
-|완벽한 디테일을 추구하는 [최유정](github.com/yuzomi)|코드 위 모든 문제를 해결하는 [고지연](github.com/yeon1615)|
+|완벽한 디테일을 추구하는 [최유정](https://github.com/yuzomi)|코드 위 모든 문제를 해결하는 [고지연](https://github.com/yeon1615)|
 |:---:|---|
 |전체 디자인, UI 개발을 맡았어요|프론트엔드 기능 개발, Firebase DB 연동을 맡았어요|
 
