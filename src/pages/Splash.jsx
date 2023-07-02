@@ -56,6 +56,7 @@ const SplashText = styled.p`
 const LoginBtn = styled.button`
   opacity: 0;
   background-color: #fee500;
+  box-shadow: rgba(207, 207, 207, 0.838) 0px 1px 4px
   width: 60%;
   padding: 4px 0;
   border-radius: 25px;
@@ -63,7 +64,8 @@ const LoginBtn = styled.button`
   cursor: pointer;
   &:last-child {
     margin-top: 10px;
-    background-color: #ddc9fd70;
+    background-color: rgb(124, 106, 221);
+    color: #fff;
   }
   &.changeOpacity {
     animation: ${splashBtn} 0.7s 0.7s ease-in-out forwards;
@@ -84,9 +86,12 @@ const KakaoLogo = styled.img`
 const LoginTxt = styled.h1`
   font-size: 12px;
   text-align: center;
-  color: #000;
+  color: black;
   font-weight: normal;
   letter-spacing: 1px;
+  &:last-child {
+    color: white;
+   }
 `;
 
 export default function Splash() {
