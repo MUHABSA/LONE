@@ -38,10 +38,10 @@
 |사용한 기술|내용|
 |:---:|---|
 |Figma|개발 전 UI 디자인을 한 눈에 알아보기 쉽도록 디자인 툴은 Figma를 사용했어요|
-|React|설명|
+|React|컴포넌트의 분리와 재사용 측면에서 효율성을 높이기 위해 React를 사용했어요|
 |Styled-components|CSS의 컴포넌트화로 스타일 시트 파일을 유지보수 할 필요가 없도록 Styled-components를 사용했어요|
-|Kakao Map SDK|설명|
-|Firebase|내용|
+|Kakao Map SDK|양조장의 위치를 효과적으로 전달하기 위해 Kakao 지도 API를 활용해 위치정보를 시각적으로 전달했어요|
+|Firebase|유저 인증과 데이터베이스를 편리하게 구현하고 관리하기 위해 Firebase를 사용했어요|
 
 <br>
 
