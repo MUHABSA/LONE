@@ -23,7 +23,6 @@ export default function ProductDetailPage() {
   const { id } = useParams();
   const [productData, setProductData] = useState({});
   const [productId, setProductId] = useState('');
-  console.log(productData);
   const [isLiked, setIsLiked] = useState();
   const [likeCount, setLikeCount] = useState();
 
