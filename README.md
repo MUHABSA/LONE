@@ -1,6 +1,7 @@
 # LONE | 로컬로 오네
 
-![‎로네 리드미 ‎001](https://github.com/MUHABSA/LONE/assets/102042383/6fb1b521-7e50-40f8-9c28-43483c1297ca)
+![‎로네 리드미 ‎001](https://github.com/MUHABSA/LONE/assets/102042383/13e27316-04bc-4547-a7f2-0daed5235c93)
+
 
 📄 URL: https://lone.vercel.app/
 
@@ -15,20 +16,21 @@
 
 <br><br><br>
 
-![‎로네 리드미 ‎002](https://github.com/MUHABSA/LONE/assets/102042383/ea3b4fa3-5ca4-4d81-9525-dcc39db29f65)
-![‎로네 리드미 ‎003](https://github.com/MUHABSA/LONE/assets/102042383/d41d25e6-8b66-4dce-b017-d1cfe83888a3)
-![‎로네 리드미 ‎004](https://github.com/MUHABSA/LONE/assets/102042383/bc61e356-fa0a-4888-9f80-16a70d4bdcb1)
-![‎로네 리드미 ‎005](https://github.com/MUHABSA/LONE/assets/102042383/72c2d8c8-d43b-48db-a635-ffc1c652b787)
-![‎로네 리드미 ‎006](https://github.com/MUHABSA/LONE/assets/102042383/2fbde44a-77a8-4481-ad86-e2bebc19f65e)
-![‎로네 리드미 ‎007](https://github.com/MUHABSA/LONE/assets/102042383/00849c6f-ef7a-49a2-84ee-a786b79b0989)
-![‎로네 리드미 ‎008](https://github.com/MUHABSA/LONE/assets/102042383/59060080-b141-46e4-9bba-99a63f9ee094)
+![‎로네 리드미 ‎002](https://github.com/MUHABSA/LONE/assets/102042383/0a326919-6213-4658-ab52-3b54df5201df)
+![‎로네 리드미 ‎003](https://github.com/MUHABSA/LONE/assets/102042383/39bccc9a-43b1-45ea-b9dc-0fb5ef086a49)
+![‎로네 리드미 ‎004](https://github.com/MUHABSA/LONE/assets/102042383/d4c5e62c-1408-4c08-b37c-19220f0570ba)
+![‎로네 리드미 ‎005](https://github.com/MUHABSA/LONE/assets/102042383/4d506e4e-c40f-411b-b4d1-eff59abfbbff)
+![‎로네 리드미 ‎006](https://github.com/MUHABSA/LONE/assets/102042383/0f49c20d-c60c-40e4-bad1-a1cab829f3e9)
+![‎로네 리드미 ‎007](https://github.com/MUHABSA/LONE/assets/102042383/42105b7a-b9dd-48ba-9fd4-9f9dada63e00)
+![‎로네 리드미 ‎008](https://github.com/MUHABSA/LONE/assets/102042383/06bd9f95-103a-4c5f-a36a-0038c407cb3e)
+
 
 <br>
 
 ## 🥂 팀원 소개
 |완벽한 디테일을 추구하는 [최유정](https://github.com/yuzomi)|코드 위 모든 문제를 해결하는 [고지연](https://github.com/yeon1615)|
 |:---:|---|
-|전체 디자인, UI 개발을 맡았어요|프론트엔드 기능 개발, Firebase DB 연동을 맡았어요|
+|전체 기획, 디자인, UI 개발을 맡았어요|프론트엔드 기능 개발, Firebase DB 연동을 맡았어요|
 
 <br> <br>
 
